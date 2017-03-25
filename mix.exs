@@ -7,6 +7,7 @@ defmodule RandomUsername.Mixfile do
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+		 package: package(),
      deps: deps()]
   end
 
@@ -22,4 +23,13 @@ defmodule RandomUsername.Mixfile do
   defp deps do
     []
   end
+
+  defp package do
+    [name: :random_username,
+     files: ["lib", "mix.exs", "README*", "readme*", "LICENSE*", "license*"],
+     maintainers: ["Rufus Post"],
+     licenses: ["MIT"],
+     links: %{"GitHub" => "https://github.com/mynameisrufus/random_username",
+              "Docs" => "https://github.com/mynameisrufus/random_username"}]
+	end
 end
